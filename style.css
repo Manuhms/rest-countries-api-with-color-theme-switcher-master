@@ -1,0 +1,137 @@
+    :root {
+      --bg: #fafafa;
+      --text: #111;
+      --card: #fff;
+      --input: #ddd;
+    }
+
+    .dark-theme {
+      --bg: #202c37;
+      --text: #fff;
+      --card: #2b3945;
+      --input: #444;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      background-color: var(--input);
+      color: var(--text);
+      border: none;
+      border-radius: 5px;
+    }
+
+    .countries-container {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .country-card {
+      background-color: var(--card);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .country-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 15px;
+    }
+
+    #back-button {
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: var(--card);
+      border: none;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      color: var(--text);
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Smartphones até 480px */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input, select {
+    width: 100%;
+  }
+
+  .countries-container {
+    grid-template-columns: 1fr;
+  }
+
+  .info img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablets entre 481px e 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .countries-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input, select {
+    width: 100%;
+  }
+}
